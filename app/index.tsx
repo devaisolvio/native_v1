@@ -1,11 +1,11 @@
-import { Text, View } from "react-native";
+import { Redirect } from "expo-router";
 
 export default function Index() {
-  return (
-    <View
-      className="flex-1 items-center justify-center"
-    >
-      <Text className="text-4xl text-blue-500 font-semibold">FirstPage!</Text>
-    </View>
-  );
+  const k = false; // change this logic later to read from storage
+
+  if (!k) {
+    return <Redirect href="/onboarding" />;
+  }
+
+  return <Redirect href="/home" />;
 }
