@@ -12,7 +12,8 @@ module.exports = {
   presets: [require("nativewind/preset")],
   theme: {
     extend: {
-      colors: {
+       colors: {
+        // flat, semantic keys → super clear classnames
         "bg-mint-50": PALETTE["bg-mint-50"],
         "bg-peach-200": PALETTE["bg-peach-200"],
         "surface-overlay": PALETTE["surface-overlay"],

@@ -1,17 +1,17 @@
 import React, { useCallback, useMemo, useState } from "react";
-import { Dimensions, Platform, View, Text, Pressable } from "react-native";
+import { View, Text, Pressable ,Dimensions,Platform } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Gesture, GestureDetector } from "react-native-gesture-handler";
 import SettingsModel from "@/components/SettingsModel";
 import Animated, {
+  runOnJS,
+  useAnimatedStyle,
   useSharedValue,
   withTiming,
-  useAnimatedStyle,
-  runOnJS,
 } from "react-native-reanimated";
 import { Ionicons, Feather } from "@expo/vector-icons";
-import { color } from "../theme/palette";
+import { color } from "../theme/palette"; // <-- JS tokens for gradient/icons
 
 const QUOTES = [
   "I trust the wisdom of my body.",
