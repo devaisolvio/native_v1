@@ -21,6 +21,20 @@ export const PALETTE = {
   "accent-indigo-500": "#5C7CFA",
   "danger-red-500": "#EF4444",
   "success-green-500": "#10B981",
+    // screen background (sand / warm off-white)
+  "bg-sand-50": "#F5EFE8",
+
+  // card backgrounds
+  "card-bg": "#FFFFFF",
+
+  // promo banner dark navy
+  "promo-navy": "#1F2A37",
+
+  // borders / dividers
+  "divider": "rgba(0,0,0,0.06)",
+
+  // icon muted
+  "icon-muted": "#6B7280",
 } as const;
 
 export type ColorToken = keyof typeof PALETTE;
