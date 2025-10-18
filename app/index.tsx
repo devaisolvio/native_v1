@@ -8,4 +8,5 @@ export default function Index() {
   }
 
   return <Redirect href="/home" />;
+// app/index.tsx
 }
