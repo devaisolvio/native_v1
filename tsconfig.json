@@ -6,7 +6,6 @@
     "baseUrl": ".",
     "moduleResolution": "bundler",
     "skipLibCheck": true,
-    "ignoreDeprecations": "6.0",
     "paths": {
       "@/*": [
         "./*"
