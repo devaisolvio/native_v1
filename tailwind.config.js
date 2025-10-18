@@ -6,6 +6,9 @@ module.exports = {
   presets: [require("nativewind/preset")],
   theme: {
     extend: {
+       fontFamily: {
+         poppins: ['Poppins'],
+       },
        colors: {
         // flat, semantic keys → super clear classnames
         "bg-mint-50": PALETTE["bg-mint-50"],
