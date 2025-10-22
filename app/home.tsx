@@ -3,7 +3,6 @@ import { View, Text, Pressable ,Dimensions,Platform } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Gesture, GestureDetector } from "react-native-gesture-handler";
-import SettingsModel from "@/components/SettingsModel";
 import Animated, {
   runOnJS,
   useAnimatedStyle,
@@ -12,6 +11,7 @@ import Animated, {
 } from "react-native-reanimated";
 import { Ionicons, Feather } from "@expo/vector-icons";
 import { color } from "../theme/palette"; // <-- JS tokens for gradient/icons
+import { Link, router } from "expo-router";
 
 const QUOTES = [
   "I trust the wisdom of my body.",
@@ -24,7 +24,6 @@ const QUOTES = [
 export default function Home() {
   const [index, setIndex] = useState(0);
   const opacity = useSharedValue(1);
-  const [showModal, setShowModal] = useState(false);
   const quote = useMemo(() => QUOTES[index % QUOTES.length], [index]);
 
   const updateIndex = useCallback(() => {
@@ -81,14 +80,15 @@ export default function Home() {
           <SafeAreaView className="flex-1" edges={["top", "left", "right"]}>
             {/* Top bar */}
             <View className="px-4 pt-2 flex-row items-center justify-between">
+              <Link href="/settings/Index" asChild>
               <Pressable 
-              onPress={()=>setShowModal(true)}
+                onPress={()=>router.push('/settings/Index')}
                 className="w-12 h-12 rounded-2xl items-center justify-center"
                 style={{ backgroundColor: color("surface-overlay") }}
               >
                 <Ionicons name="person-outline" size={22} color={color("btn-ghost-icon")} />
               </Pressable>
-
+</Link>
               <View className="flex-row items-center">
                 <Feather name="instagram" size={18} color={color("text-primary")} />
                 <View className="w-3" />
@@ -164,7 +164,6 @@ export default function Home() {
             </View>
           </SafeAreaView>
 
-          <SettingsModel  visible={showModal} onClose={()=>setShowModal(false)}/>
         </LinearGradient>
       </View>
     </GestureDetector>
